@@ -1,5 +1,6 @@
-import { User } from './../user/domain/entities/user.entity';
+import { User } from '../user/domain/entities/user.entity';
 import { DataSource, DataSourceOptions } from 'typeorm';
+import path from "path";
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
@@ -9,7 +10,6 @@ export const dataSourceOptions: DataSourceOptions = {
   username: 'postgres',
   password: 'pg_password',
   entities: [User],
-  migrations: [__dirname + '../migrations/*{.ts,.js}'],
   synchronize: true,
   logging: true,
 };

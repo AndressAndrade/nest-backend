@@ -1,18 +1,17 @@
-import { CreateUserService } from './create-user.service';
 import {
   Body,
   Controller,
   HttpStatus,
-  Param,
   Post,
   Res,
   ValidationPipe,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { CreateUserDto } from 'src/user/domain/dto/createUser.dto';
+import { CreateUserService } from './create-user.service';
+import { CreateUserDto } from '../../domain/dto/createUser.dto';
 
 @Controller('/v1/user')
-export class CreateUserHttpController {
+export class CreateUserController {
   public constructor(private createUserService: CreateUserService) {}
 
   @Post()

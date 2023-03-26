@@ -5,10 +5,10 @@ services:
     build:
         dockerfile: Dockerfile
         context: .
-    depends_on: 
+    depends_on:
         - db
-    environment: 
-        DATABASE_URL: db://postgres:pg_password@db:5432/projeto
+    environment:
+        DATABASE_URL: db://postgres:pg_password@db:35000/projeto
         NODE_ENV: development
         PORT: 3000
     ports:
@@ -16,7 +16,7 @@ services:
   db:
       image: postgres:10.4
       ports:
-        - "5432:5432"
-      environment: 
+        - "35000:5432"
+      environment:
         - POSTGRES_PASSWORD=pg_password
         - POSTGRES_DB=projeto

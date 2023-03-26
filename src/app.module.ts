@@ -5,12 +5,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { dataSourceOptions } from './config/typeorm.config';
 import { UserModule } from './user/domain/user.module';
+import { CreateUserModule } from './user/use-cases/create-user/create-user.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot(dataSourceOptions),
     UserModule,
+    CreateUserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

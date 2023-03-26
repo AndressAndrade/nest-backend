@@ -1,4 +1,4 @@
-import { UserService } from './../../domain/user.service';
+import { UserService } from '../../domain/user.service';
 import { ConflictException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from '../../domain/dto/createUser.dto';
 

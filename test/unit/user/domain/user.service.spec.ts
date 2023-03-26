@@ -1,8 +1,8 @@
-import { UserService } from '../../src/user/domain/user.service';
 import { expect } from 'chai';
-import { Repository } from "typeorm";
-import { User } from "../../src/user/domain/entities/user.entity";
-import { instance, mock } from "ts-mockito";
+import { Repository } from 'typeorm';
+import { instance, mock } from 'ts-mockito';
+import { UserService } from '../../../../src/user/domain/user.service';
+import { User } from '../../../../src/user/domain/entities/user.entity';
 
 describe('UserService', () => {
   let service: UserService;

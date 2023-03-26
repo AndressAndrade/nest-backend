@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { expect } from 'chai';
-import { AppModule } from '../../../../src/app.module';
-import { CreateUserController } from '../../../../src/user/use-cases/create-user/create-user.http.controller';
+import { AppModule } from '../../../../../src/app.module';
+import { CreateUserController } from '../../../../../src/user/use-cases/create-user/create-user.http.controller';
 
 describe('CreateUserController', () => {
   let controller: CreateUserController;

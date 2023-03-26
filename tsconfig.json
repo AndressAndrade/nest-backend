@@ -15,7 +15,7 @@
   "include": [
     "src"
 ,
-    "test/integration/use-cases/create-user/create-user.http.controller.integration.spec.ts", "test/unit/user/use-cases/create-user.service.spec.ts"  ],
+    "test/integration/user/use-cases/create-user/create-user.http.controller.integration.spec.ts", "test/unit/user/use-cases/create-user.service.spec.ts"  ],
   "exclude": [
     "node_modules",
     "dist",

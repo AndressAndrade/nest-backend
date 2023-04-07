@@ -1,7 +1,8 @@
 raise/db:
 	docker-compose up db -d
 
-destroy/db:
+destroy/all:
 	docker-compose down
 
-deploy:	build
+deploy:
+	npm run dev

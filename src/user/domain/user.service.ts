@@ -16,7 +16,7 @@ export class UserService {
     return this.saveUser(newUser);
   }
 
-  async findUser(phone: string): Promise<User | null> {
+  async findUserByPhone(phone: string): Promise<User | null> {
     return this.userRepository.findOneBy({ phone });
   }
 

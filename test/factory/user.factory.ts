@@ -1,10 +1,13 @@
-import { Factory } from "rosie";
-import faker from 'faker';
+import { Factory } from 'rosie';
+import { Chance } from 'chance';
+import { User } from '../../src/user/domain/entities/user.entity';
 
-export const UserFactory = Factory.define("userFactory")
-  .attr("id", () => faker.datatype.uuid())
-  .attr("name", () => faker.name.fullName())
-  .attr("email", () => faker.internet.email())
-  .attr("phone", () => faker.phone.number('+55#########'))
-  .attr("createdAt", () => faker.date.recent())
-  .attr("updatedAt", () => faker.date.recent());
+const chance = new Chance();
+
+export const UserFactory = new Factory<User>()
+  .attr('id', () => chance.guid({ version: 5 }))
+  .attr('name', () => chance.name())
+  .attr('email', () => chance.email())
+  .attr('phone', () => chance.phone({ country: 'br', formatted: false }))
+  .attr('createdAt', () => chance.date())
+  .attr('updatedAt', () => chance.date());

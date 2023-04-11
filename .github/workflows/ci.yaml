@@ -4,9 +4,17 @@ jobs:
   check-application:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm test
+      - name: Subir banco
+        run: docker-compose up db -d
+      - name: Rodar CI
+        run: npm ci
+      - name: Rodar testes
+        run: npm test
+      - name: Parar banco
+        run: docker-compose down

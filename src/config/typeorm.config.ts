@@ -3,6 +3,7 @@ import {
   TypeOrmModuleAsyncOptions,
   TypeOrmModuleOptions,
 } from '@nestjs/typeorm';
+import { User } from '../user/domain/entities/user.entity';
 
 export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
   imports: [ConfigModule],
@@ -15,10 +16,10 @@ export const typeOrmAsyncConfig: TypeOrmModuleAsyncOptions = {
       username: process.env.POSTGRES_USER,
       database: process.env.POSTGRES_DB,
       password: process.env.POSTGRES_PASSWORD,
-      entities: [__dirname + '/../**/*.entity.{js,ts}'],
-      migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
-      synchronize: false,
-      logging: true,
+      entities: [User],
+      migrations: [__dirname + '/../migrations/*{.ts,.js}'],
+      synchronize: true,
+      logging: false,
     };
   },
 };
@@ -30,8 +31,8 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
   username: process.env.POSTGRES_USER,
   database: process.env.POSTGRES_DB,
   password: process.env.POSTGRES_PASSWORD,
-  entities: [__dirname + '/../**/*.entity.{js,ts}'],
-  migrations: [__dirname + '/../database/migrations/*{.ts,.js}'],
-  synchronize: false,
-  logging: true,
+  entities: [User],
+  migrations: [__dirname + '/../migrations/*{.ts,.js}'],
+  synchronize: true,
+  logging: false,
 };

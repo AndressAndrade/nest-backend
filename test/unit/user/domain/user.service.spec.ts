@@ -21,11 +21,9 @@ describe('UserService', () => {
   });
 
   context('when save a user', () => {
-    beforeEach(async () => {
+    it('should find user', async () => {
       when(repository.save(anything())).thenResolve(user);
       await service.createUser(user);
-    });
-    it('should find user', async () => {
       when(repository.findOneBy(anything())).thenResolve(user);
       const findUser = await service.findUserByPhone(user.phone);
       expect(findUser).to.be.deep.eq(user);

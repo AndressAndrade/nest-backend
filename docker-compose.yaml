@@ -18,5 +18,5 @@ services:
       ports:
         - "35000:5432"
       environment:
-        - POSTGRES_PASSWORD=pg_pass
-        - POSTGRES_DB=projeto
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=db

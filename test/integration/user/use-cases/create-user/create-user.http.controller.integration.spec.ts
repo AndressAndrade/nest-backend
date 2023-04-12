@@ -40,7 +40,7 @@ describe('CreateUserController', () => {
           user,
           instance(mockResponse),
         );
-        verify(mockResponse.status(200)).once();
+        verify(mockResponse.status(201)).once();
         expect(response).to.be.deep.eq(user);
       });
     });

@@ -24,7 +24,7 @@ export class CreateUserService {
     }
     const newUser = await this.userService.createUser(user);
     return {
-      created: false,
+      created: true,
       user: newUser,
     };
   }

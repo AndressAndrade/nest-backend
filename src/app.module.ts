@@ -11,6 +11,7 @@ import { CreateUserModule } from './user/use-cases/create-user/create-user.modul
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: ['.env', '.env.example'],
     }),
     TypeOrmModule.forRoot(dataSourceOptions),
     UserModule,
